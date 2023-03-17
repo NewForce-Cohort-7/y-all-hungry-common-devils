@@ -1,15 +1,28 @@
-import {getDrinks} from './database.js';
+import {getDrinks, setDrink} from './database.js'
 
-const dranks = getDrinks();
+const dranks = getDrinks()
 
-const listItemsArray = drinks.map(
-  (drink) => {
-      return `<select>
-      <option value="drink[1].id">Option 1</option>
-      <option value="option2">Option 2</option>
-      <option value="option3">Option 3</option>
-      <option value="option4">Option 4</option>
-    </select>`
+document.addEventListener(
+  "change",
+  (event) => {
+      if (event.target.name === "drink") {
+          setDrink(parseInt(event.target.value))
+      }
   }
 )
-html += listItemsArray.join("")
+
+export const drinkOptions = () => {
+  let html = '<select name="drink"><option value="none">None</option>'
+
+  // Use .map() for converting objects to <li> elements
+  const drinkList = dranks.map(drink => {
+      return `<option value="${drink.id}">
+        ${drink.name}
+        </option>`
+  })
+
+  html += drinkList.join("")
+  html += '</select>'
+
+  return html
+}

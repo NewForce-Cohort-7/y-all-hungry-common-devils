@@ -4,16 +4,19 @@ const desserts = getDesserts()
 const dessertLocations = getDessertLocations()
 
 const filterDessertLocationsByDessert = (singleDessert) => {
-    const assignments = []
-    for (const assignment of dessertLocations) {
-        if (assignment.dessertId === singleDessert.id) {
-            assignments.push(assignment)
+    const inventories = []
+    for (const inventory of dessertLocations) {
+        if (inventory.dessertId === singleDessert.id) {
+            inventories.push(inventory)
         }
     } 
 }
 
 document.addEventListener("change", (event) => {
-    if (event.target.id === "desserts") {
+    if (event.target.id === "desserts") { 
+        for (const dessert of desserts) {
+            if 
+        }
         setDessert(parseInt(event.target.value))
     }
 })

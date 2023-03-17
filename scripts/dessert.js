@@ -24,7 +24,7 @@ document.addEventListener("change", (event) => {
 })
 
 
-export const Desserts = () => {
+export const dessert = () => {
 
     let html = ""
 

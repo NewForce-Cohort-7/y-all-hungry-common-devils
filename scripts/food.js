@@ -1,4 +1,4 @@
-import {getFood} from "./database"
+import {getFood,setFood} from "./database.js"
 
 const arrayOfood= getFood()
 
@@ -13,12 +13,12 @@ document.addEventListener(
 
 
 
-export const generateFoodHTML = () => {
+export const food = () => {
     let html = `<select id="food">
     <option value="0">Menu -Food Items</option>`
 
 
-    for (const foodObject of arrayofFood) {
+    for (const foodObject of arrayOfood) {
         html +=  `<option value="${foodObject.id}"> ${foodObject.name}</option>`
     }
 

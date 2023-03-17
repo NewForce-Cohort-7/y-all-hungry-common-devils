@@ -72,6 +72,13 @@ const database = {
 
         ],
 
+        locations: [
+            { id: 1, name: "Nic's Truck", address: "Northside" },
+            { id: 2, name: "David's Truck", address: "Southside" },
+            { id: 3, name: "Jodi's Truck", address: "Eastside" },
+            { id: 4, name: "Bobby's Truck", address: "Westside" },
+        ],
+
         foodLocations: [
             { id: 1, foodId: 1, locationId: 1, quantity: 7000 },
             { id: 2, foodId: 2, locationId: 1, quantity: 4000 },

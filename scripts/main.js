@@ -1,14 +1,14 @@
-import { yallHungry } from "./yallHungry.js"
+// import { yallHungry } from "./yallHungry.js"
 
-const mainContainer = document.querySelector("#container")
+// const mainContainer = document.querySelector("#container")
 
-const renderAllHTML = () => {
-    mainContainer.innerHTML = yallHungry()
-}
+// const renderAllHTML = () => {
+//     mainContainer.innerHTML = yallHungry()
+// }
 
-renderAllHTML()
+// renderAllHTML()
 
-document.addEventListener("stateChanged", event => {
-    console.log("State of data has changed. Regenerating HTML...")
-    renderAllHTML()
-})
+// document.addEventListener("stateChanged", event => {
+//     console.log("State of data has changed. Regenerating HTML...")
+//     renderAllHTML()
+// })

@@ -1,7 +1,7 @@
 const database = {
     transientState: {},
 
-        food: [
+        foods: [
             { id: 1, name: "Chili Dog", price: 4 },
             { id: 2, name: "Plain Dog", price: 4 },
             { id: 3, name: "Mustard Dog", price: 3 },
@@ -25,7 +25,7 @@ const database = {
 
         ],
 
-        drink: [
+        drinks: [
             { id: 1, name: "Coke", price: 3 },
             { id: 2, name: "Pepsi", price: 3 },
             { id: 3, name: "MT DEW", price: 3 },
@@ -48,7 +48,7 @@ const database = {
             { id: 20, name: "Cherry Sprite", price: 3 }
         ],
 
-        dessert: [
+        desserts: [
             { id:1, name: "Chocolate", price: 3 },
             { id: 2, name: "Strawberry", price: 3 },
             { id: 3, name: "Peach", price: 3 },

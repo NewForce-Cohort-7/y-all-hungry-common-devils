@@ -1,8 +1,8 @@
-import { foods } from "./foods.js"
-import { drinks } from "./drinks.js"
-import { desserts } from "./desserts.js"
+import { food } from "./food.js"
+import { drink } from "./drink.js"
+import { dessert } from "./dessert.js"
 import { orders } from "./orders.js"
-import { locations } from "./locations.js"
+import { location } from "./location.js"
 import { addCustomOrder } from "./database.js"
 
 
@@ -24,23 +24,23 @@ export const yallHungry = () => {
 
     <article class="locations">
       <h2> Store Location </h2>
-        ${locations()}
+        ${location()}
     </article>
 
          <article class="choices">
       <section class="choices__foods options">
           <h2> Food Items </h2>
-         ${foods()}
+         ${food()}
       </section>
         
         <section class="choices__drinks options">
         <h2> Drink Items </h2> 
-            ${drinks()}
+            ${drink()}
             </section>
 
         <section class="choices__desserts options">
         <h2> Ice Cream Flavors </h2>
-            ${desserts()}
+            ${dessert()}
             </section>
 
         <article>

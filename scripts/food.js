@@ -1,4 +1,4 @@
-import {getFoods} from "./database"
+import {getFood} from "./database"
 
 const arrayOfood= getFood()
 

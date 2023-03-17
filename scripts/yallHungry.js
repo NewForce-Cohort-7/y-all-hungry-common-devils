@@ -30,17 +30,17 @@ export const yallHungry = () => {
          <article class="choices">
       <section class="choices__foods options">
           <h2> Food Items </h2>
-         ${food()}
+          ${food()}
       </section>
         
         <section class="choices__drinks options">
         <h2> Drink Items </h2> 
-            ${drinkOptions()}
+           ${drink()}
             </section>
 
         <section class="choices__desserts options">
         <h2> Ice Cream Flavors </h2>
-            ${dessert()}
+           ${dessert()}
             </section>
 
         <article>
@@ -51,7 +51,7 @@ export const yallHungry = () => {
 
         <article class="customOrders">
             <h2> Orders </h2> 
-            ${orders()}
+           ${orders()}
         </article>
     
     `

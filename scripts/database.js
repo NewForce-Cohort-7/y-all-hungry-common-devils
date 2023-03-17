@@ -2,6 +2,7 @@ const database = {
     transientState: {},
 
         foods: [
+            { id: 0, name: "No Food", price: 0 },
             { id: 1, name: "Chili Dog", price: 4 },
             { id: 2, name: "Plain Dog", price: 4 },
             { id: 3, name: "Mustard Dog", price: 3 },
@@ -26,6 +27,7 @@ const database = {
         ],
 
         drinks: [
+            { id: 0, name: "No Drink", price: 0 },
             { id: 1, name: "Coke", price: 3 },
             { id: 2, name: "Pepsi", price: 3 },
             { id: 3, name: "MT DEW", price: 3 },
@@ -49,6 +51,7 @@ const database = {
         ],
 
         desserts: [
+            { id: 0, name: "No Dessert", price: 0 },
             { id:1, name: "Chocolate", price: 3 },
             { id: 2, name: "Strawberry", price: 3 },
             { id: 3, name: "Peach", price: 3 },
@@ -72,6 +75,13 @@ const database = {
 
         ],
 
+        location: [
+            { id: 1, name: "Nic's Truck", address: "Northside" },
+            { id: 2, name: "David's Truck", address: "Southside" },
+            { id: 3, name: "Jodi's Truck", address: "Eastside" },
+            { id: 4, name: "Bobby's Truck", address: "Westside" },
+        ],
+
         foodLocations: [
             { id: 1, foodId: 1, locationId: 1, quantity: 7000 },
             { id: 2, foodId: 2, locationId: 1, quantity: 4000 },
@@ -92,7 +102,11 @@ const database = {
             { id: 17, foodId: 17, locationId: 4, quantity: 500 },
             { id: 18, foodId: 18, locationId: 4, quantity: 700 },
             { id: 19, foodId: 19, locationId: 4, quantity: 800 },
-            { id: 20, foodId: 20, locationId: 4, quantity: 600 }
+            { id: 20, foodId: 20, locationId: 4, quantity: 600 },
+            { id: 21, locationId: 1, price: 0 },
+            { id: 22, locationId: 2, price: 0 },
+            { id: 23, locationId: 3, price: 0 },
+            { id: 24, locationId: 4, price: 0 }
         ],
 
         drinkLocations: [
@@ -115,7 +129,11 @@ const database = {
             { id: 17, drinkId: 17, locationId: 4, quantity: 500 },
             { id: 18, drinkId: 18, locationId: 4, quantity: 700 },
             { id: 19, drinkId: 19, locationId: 4, quantity: 800 },
-            { id: 20, drinkId: 20, locationId: 4, quantity: 600 }
+            { id: 20, drinkId: 20, locationId: 4, quantity: 600 },
+            { id: 21, locationId: 1, price: 0 },
+            { id: 22, locationId: 2, price: 0 },
+            { id: 23, locationId: 3, price: 0 },
+            { id: 24, locationId: 4, price: 0 }
         ],
         
         dessertLocations: [
@@ -138,7 +156,11 @@ const database = {
             { id: 17, dessertId: 17, locationId: 4, quantity: 500 },
             { id: 18, dessertId: 18, locationId: 4, quantity: 700 },
             { id: 19, dessertId: 19, locationId: 4, quantity: 800 },
-            { id: 20, dessertId: 20, locationId: 4, quantity: 600 }
+            { id: 20, dessertId: 20, locationId: 4, quantity: 600 },
+            { id: 21, locationId: 1, price: 0 },
+            { id: 22, locationId: 2, price: 0 },
+            { id: 23, locationId: 3, price: 0 },
+            { id: 24, locationId: 4, price: 0 }
         ],
 
         orders: [
@@ -204,7 +226,7 @@ export const setLocation = (id) => {
 }
 
 export const getLocations = () => {
-    return database.getLocations.map(f => ({...f}))
+    return database.location.map(f => ({...f}))
 }
 
 export const completeOrder = () => {

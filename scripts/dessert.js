@@ -15,9 +15,11 @@ const filterDessertLocationsByDessert = (singleDessert) => {
 document.addEventListener("change", (event) => {
     if (event.target.id === "desserts") { 
         for (const dessert of desserts) {
-            if 
+            if (dessert.id === parseInt(event.target.value)) {
+                const inventories = filterDessertLocationsByDessert(dessert)
+                setDessert(parseInt(inventories.id))
+            }
         }
-        setDessert(parseInt(event.target.value))
     }
 })
 

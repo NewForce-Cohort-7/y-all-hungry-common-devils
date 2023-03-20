@@ -1,9 +1,9 @@
-import { food } from "./food.js"
-import { drink } from "./drink.js"
+// import { food } from "./food.js"
+import { drinkOptions, drankOrder } from "./drink.js"
 import { dessert } from "./dessert.js"
-import { orders } from "./orders.js"
-import { location } from "./location.js"
-import { addCustomOrder } from "./database.js"
+// import { orders } from "./orders.js"
+// import { location } from "./location.js"
+// import { addCustomOrder } from "./database.js"
 
 
 document.addEventListener(
@@ -24,18 +24,18 @@ export const yallHungry = () => {
 
     <article class="locations">
       <h2> Store Location </h2>
-        ${location()}
+        <!-- location() -->
     </article>
 
          <article class="choices">
       <section class="choices__foods options">
           <h2> Food Items </h2>
-          ${food()}
+          <!-- food() -->
       </section>
         
         <section class="choices__drinks options">
         <h2> Drink Items </h2> 
-           ${drink()}
+           ${drinkOptions()}
             </section>
 
         <section class="choices__desserts options">
@@ -51,7 +51,8 @@ export const yallHungry = () => {
 
         <article class="customOrders">
             <h2> Orders </h2> 
-           ${orders()}
+            ${drankOrder}
+            <!-- orders() -->
         </article>
     
     `

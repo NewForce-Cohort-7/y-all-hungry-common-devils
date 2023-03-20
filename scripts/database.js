@@ -2,7 +2,7 @@ const database = {
     transientState: {},
 
         foods: [
-            { id: 0, name: "No Food", price: 0 },
+            
             { id: 1, name: "Chili Dog", price: 4 },
             { id: 2, name: "Plain Dog", price: 4 },
             { id: 3, name: "Mustard Dog", price: 3 },
@@ -27,7 +27,7 @@ const database = {
         ],
 
         drinks: [
-            { id: 0, name: "No Drink", price: 0 },
+            
             { id: 1, name: "Coke", price: 3 },
             { id: 2, name: "Pepsi", price: 3 },
             { id: 3, name: "MT DEW", price: 3 },
@@ -51,7 +51,7 @@ const database = {
         ],
 
         desserts: [
-            { id: 0, name: "No Dessert", price: 0 },
+            
             { id:1, name: "Chocolate", price: 3 },
             { id: 2, name: "Strawberry", price: 3 },
             { id: 3, name: "Peach", price: 3 },
@@ -102,11 +102,7 @@ const database = {
             { id: 17, foodId: 17, locationId: 4, quantity: 500 },
             { id: 18, foodId: 18, locationId: 4, quantity: 700 },
             { id: 19, foodId: 19, locationId: 4, quantity: 800 },
-            { id: 20, foodId: 20, locationId: 4, quantity: 600 },
-            { id: 21, locationId: 1, price: 0 },
-            { id: 22, locationId: 2, price: 0 },
-            { id: 23, locationId: 3, price: 0 },
-            { id: 24, locationId: 4, price: 0 }
+            { id: 20, foodId: 20, locationId: 4, quantity: 600 }
         ],
 
         drinkLocations: [
@@ -129,11 +125,7 @@ const database = {
             { id: 17, drinkId: 17, locationId: 4, quantity: 500 },
             { id: 18, drinkId: 18, locationId: 4, quantity: 700 },
             { id: 19, drinkId: 19, locationId: 4, quantity: 800 },
-            { id: 20, drinkId: 20, locationId: 4, quantity: 600 },
-            { id: 21, locationId: 1, price: 0 },
-            { id: 22, locationId: 2, price: 0 },
-            { id: 23, locationId: 3, price: 0 },
-            { id: 24, locationId: 4, price: 0 }
+            { id: 20, drinkId: 20, locationId: 4, quantity: 600 }
         ],
         
         dessertLocations: [
@@ -156,11 +148,7 @@ const database = {
             { id: 17, dessertId: 17, locationId: 4, quantity: 500 },
             { id: 18, dessertId: 18, locationId: 4, quantity: 700 },
             { id: 19, dessertId: 19, locationId: 4, quantity: 800 },
-            { id: 20, dessertId: 20, locationId: 4, quantity: 600 },
-            { id: 21, locationId: 1, price: 0 },
-            { id: 22, locationId: 2, price: 0 },
-            { id: 23, locationId: 3, price: 0 },
-            { id: 24, locationId: 4, price: 0 }
+            { id: 20, dessertId: 20, locationId: 4, quantity: 600 }
         ],
 
         orders: [
@@ -176,12 +164,16 @@ const database = {
     
 }
 
+export const transientState = () => {
+    return {...database.transientState}
+}
 
 
+export const getOrders = () => {
+    return database.orders.map(order => ({...order}))
+}
 
-
-
-export const getFoods = () => {
+export const getFood = () => {
     return database.foods.map(food => ({...food}))
 }
 
@@ -229,7 +221,21 @@ export const getLocations = () => {
     return database.location.map(f => ({...f}))
 }
 
-export const completeOrder = () => {
+export const addCustomOrder = () => {
+    const newOrder = {...database.transientState}
+
+    // Add a new primary key to the object
+    const lastIndex = database.orders.length - 1
+    newOrder.id = database.orders[lastIndex].id + 1
+
+    // Add a timestamp to the order
+    newOrder.timestamp = Date.now()
+
+    // Add the new order object to custom orders state
+    database.orders.push(newOrder)
+
+    // Reset the temporary state for user choices
+    database.transientState = {}
 
         // Broadcast custom event to entire documement so that the
         // application can re-render and update state

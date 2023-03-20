@@ -1,9 +1,9 @@
 import { food } from "./food.js"
 import { drinkOptions, drankOrder } from "./drink.js"
 import { dessert } from "./dessert.js"
-// import { orders } from "./orders.js"
+import { orders } from "./orders.js"
 import { location } from "./location.js"
-// import { addCustomOrder } from "./database.js"
+import { addCustomOrder } from "./database.js"
 
 
 document.addEventListener(
@@ -52,7 +52,7 @@ export const yallHungry = () => {
         <article class="customOrders">
             <h2> Orders </h2> 
             ${drankOrder}
-            <!-- orders() -->
+            ${orders()}
         </article>
     
     `

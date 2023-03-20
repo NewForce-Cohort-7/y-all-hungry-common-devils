@@ -14,14 +14,14 @@ const filterDessertLocationsByDessert = (singleDessert) => {
 
 document.addEventListener("change", (event) => {
     if (event.target.id === "desserts") { 
-        for (const dessert of desserts) {
-            if (dessert.id === parseInt(event.target.value)) {
-                const inventories = filterDessertLocationsByDessert(dessert)
-                setDessert(parseInt(inventories.id))
+        //for (const dessert of desserts) {
+            //if (dessert.id === parseInt(event.target.value)) {
+               // const inventories = filterDessertLocationsByDessert(dessert)
+                setDessert(parseInt(event.target.value))
             }
         }
-    }
-})
+    
+)
 
 
 export const dessert = () => {

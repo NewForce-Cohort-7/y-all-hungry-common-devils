@@ -1,7 +1,7 @@
 import {getDrinks, setDrink} from './database.js'
 
-const dranks = getDrinks()
-const yourDrinks = []
+const dranks = getDrinks() // initializing the dranks variable with the function call getDrinks()
+const yourDrinks = [] // an array that stores every drink selection from the user
 
 document.addEventListener(
   "change",
@@ -21,7 +21,7 @@ document.addEventListener(
   }
 )
 
-const addToDrankOrder = (selectedDrink) => {
+const addToDrankOrder = (selectedDrink) => { // this function builds the yourDrinks array and places the values into drankOrder to be desplayed under the index.html Orders h2 element
   yourDrinks.push(selectedDrink)
   const drinksInOrder = "Your Drinks: " + yourDrinks.join(', ')
   drankOrder = drinksInOrder

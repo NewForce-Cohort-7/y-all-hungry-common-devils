@@ -38,7 +38,7 @@ export const drinkOptions = () => {
   })
 
   html += drinkList.join("")
-  console.log(html);
+  // console.log(html);
   html += '</select>'
 
   return html

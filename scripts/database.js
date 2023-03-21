@@ -1,5 +1,13 @@
 const database = {
-    transientState: {},
+    transientState: {
+        // locationId: null,
+        // drinkId: null,
+        // foodId: null,
+        // dessertId: null
+    },
+    
+    // pretendTransientState: {
+    // },
 
         foods: [
             

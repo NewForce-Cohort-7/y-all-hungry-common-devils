@@ -71,6 +71,7 @@ export const dessert = () => {
 
         //-------  
     html += correctDesserts
+    // add an option that says none
     html += "</select>"
     return html
 }

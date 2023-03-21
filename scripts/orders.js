@@ -22,7 +22,7 @@ const buildOrderListItem = (order) => {
     const foundLocation = locations.find((location) => {
         return location.id === order.locationId
     })
-    console.log(getOrders())
+    
 let totalCost = (foundFood.price + foundDrink.price + foundDesserts.price) * 1.07
 
 const costString = totalCost.toLocaleString("en-US", {
@@ -31,7 +31,7 @@ const costString = totalCost.toLocaleString("en-US", {
 })
 
 return `<li>
-Order ${order.id}  cost: ${costString}
+Order ${order.id} cost: ${costString}
 
 
 

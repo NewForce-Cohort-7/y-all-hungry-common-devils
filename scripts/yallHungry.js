@@ -24,6 +24,7 @@ export const yallHungry = () => {
 
     <article class="locations">
       <h2> Store Location </h2>
+
         ${location()}
     </article>
 

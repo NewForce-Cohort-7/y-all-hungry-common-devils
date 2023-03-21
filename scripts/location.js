@@ -4,7 +4,7 @@ const locationArr = getLocations()
 document.addEventListener(
    "change",
     (event) => {
-        if (event.target.name === "location") {
+        if (event.target.id === "location") {
            setLocation(parseInt(event.target.value))
          }
     }

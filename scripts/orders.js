@@ -31,7 +31,7 @@ const costString = totalCost.toLocaleString("en-US", {
 })
 
 return `<li>
-Order ${order.id}  cost: ${costString}
+Order ${order.id} cost: ${costString}
 
 
 

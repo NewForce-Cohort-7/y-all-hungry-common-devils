@@ -1,4 +1,4 @@
-import { getLocations, setLocation } from "./database.js";
+import { getLocations, setLocation, } from "./database.js";
 const locationArr = getLocations()
 
 let message = ""

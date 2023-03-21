@@ -1,6 +1,6 @@
-import {getFood,setFood} from "./database.js"
+import {getFoods,setFood} from "./database.js"
 
-const arrayOfood= getFood()
+const arrayOfood= getFoods()
 
 document.addEventListener(
     "change",

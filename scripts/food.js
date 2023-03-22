@@ -7,7 +7,7 @@ document.addEventListener(
     "change",
     (event) => {
         if (event.target.id === "food") {
-            const selectedfood = arrayOfood.find(food => food.id === parseInt(event.target.value));
+            const selectedfood = arrayOfood.find(food => food.id === parseInt(event.target.value))
             foodmessage = `${selectedfood.name}`;
             setFood(parseInt(event.target.value))
         }

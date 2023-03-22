@@ -1,6 +1,6 @@
 import { food } from "./food.js"
 import { drinkOptions, drankOrder } from "./drink.js"
-import { dessert } from "./dessert.js"
+import { dessert, dessertMessage } from "./dessert.js"
 import { orders } from "./orders.js"
 import { location } from "./location.js"
 import { addCustomOrder } from "./database.js"
@@ -57,6 +57,7 @@ export const yallHungry = () => {
                 <article class="customOrders">
                     <h2> Orders </h2> 
                     ${drankOrder}
+                    ${dessertMessage}
                     ${orders()}
                 </article>
             </section>

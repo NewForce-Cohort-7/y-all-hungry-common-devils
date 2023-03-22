@@ -1,5 +1,6 @@
 const database = {
-    transientState: {},
+    transientState: {
+    },
 
         foods: [
             
@@ -167,13 +168,13 @@ const database = {
         ],
 
         orders: [
-            {
-                id: 1,
-                foodId: 1,
-                drinkId: 1,
-                dessertId: 1,
-                locationId: 1
-            }
+            // {
+                // id: 1,
+                // foodId: 1,
+                // drinkId: 1,
+                // dessertId: 1,
+                // locationId: 1
+            // }
         ],
        
     
@@ -241,7 +242,7 @@ export const addCustomOrder = () => {
 
     // Add a new primary key to the object
     const lastIndex = database.orders.length - 1
-    newOrder.id = database.orders[lastIndex].id + 1
+    newOrder.id = database.orders.length === 0 ? 1 : database.orders[lastIndex].id + 1
 
     // Add a timestamp to the order
     newOrder.timestamp = Date.now()

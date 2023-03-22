@@ -44,7 +44,7 @@ const setDrinkMenu = () => {
       localDranks += `<option value="${drank.id}">${drank.name}</option>`
     }
   })
-  console.log(localDranks)
+  // console.log(localDranks)
   return localDranks
 }
 

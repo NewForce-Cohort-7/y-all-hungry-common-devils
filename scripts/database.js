@@ -1,5 +1,6 @@
 const database = {
-    transientState: {},
+    transientState: {
+    },
 
         foods: [
             

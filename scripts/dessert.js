@@ -16,12 +16,12 @@ let message = ""
 document.addEventListener("change", (event) => {
     if (event.target.id === "desserts") { 
         const selectedDessert = desserts.find(dessert => dessert.id === parseInt(event.target.value))
-        message =  `</img>${selectedDessert.name} Milkshake`
+        message =  `${selectedDessert.name} Milkshake`
         setDessert(parseInt(event.target.value))
     }
 })
 // const inventories = filterDessertLocationsByDessert(dessert)
-{/* <img src="${selectedDessert.image}" alt="IMAGE NOT FOUND"></img> */}
+/* <img src="${selectedDessert.image}" alt="IMAGE NOT FOUND"></img> */
 const filterDessertLocationsByLocation = () => {
     const  correctDessertLocations = []
     const customOrder = transientState()
@@ -54,7 +54,7 @@ export const dessert = () => {
     let html = ""
     
     html += '<select id="desserts">'
-    html += '<option value="0">Milkshake Flavors</option>'
+    html += '<option value="0">Milkshake Flavors</option> <option>No Dessert</option>'
     // see if the dessert.id is in bridge table for that location 
     
     //finds the correct locationId for the transientState

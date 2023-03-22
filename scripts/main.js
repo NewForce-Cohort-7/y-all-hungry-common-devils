@@ -1,8 +1,10 @@
-import { yallHungry } from "./yallHungry.js"
+import { yallHungry, headerBannerImage } from "./yallHungry.js"
 
+const headerBanner = document.querySelector("#headerBanner")
 const mainContainer = document.querySelector("#container")
 
 const renderAllHTML = () => {
+    headerBanner.innerHTML = headerBannerImage()
     mainContainer.innerHTML = yallHungry()
 }
 

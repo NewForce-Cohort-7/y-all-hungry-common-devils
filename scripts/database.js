@@ -22,7 +22,8 @@ const database = {
             { id: 17, name: "Weenie Hut JR Dog", price: 7, image: "https://static.wikia.nocookie.net/spongebob/images/1/15/No_Weenies_Allowed_077.png/revision/latest/scale-to-width-down/250?cb=20200806151857", description: "Krabby patty? no thanks! i'll take this hot dog any day" },
             { id: 18, name: "Polish Dog", price: 5, image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Hotdog_-_Evan_Swigart.jpg/250px-Hotdog_-_Evan_Swigart.jpg", description: "It has kraut on it i think" },
             { id: 19, name: "Wandering Dog", price: 4, image: "https://cms.prod.nypr.digital/images/22037/fill-1200x800%7Cformat-webp%7Cwebpquality-85", description: "Kind of tastes like farley's" },
-            { id: 20, name: "Classic Dog", price: 6, image: "https://www.boxedmarket.com/nkz/gifs/60083531-sm.jpg", description: "I'm hot dog, ya need to ketchup" }
+            { id: 20, name: "Classic Dog", price: 6, image: "https://www.boxedmarket.com/nkz/gifs/60083531-sm.jpg", description: "I'm hot dog, ya need to ketchup" },
+            { id: 21, name: "No Food", price: 0, image: "https://media.istockphoto.com/id/890723242/vector/no-food-or-drinks-sign-paper-cup-with-tubule-and-hamburger-icons-in-crossed-out-red-circle.jpg?s=612x612&w=0&k=20&c=SeXQPldDogmpRdBnqGAiKP1uAbdD2Xrz0fiPjeU-MU4=", description: "No Food Chosen" }
 
         ],
 
@@ -47,7 +48,8 @@ const database = {
             { id: 17, name: "Tap Water", price: 2, image: "https://multifiles.pressherald.com/uploads/sites/4/2019/03/Screen-Shot-2019-03-18-at-4.18.05-PM-250x250.png", description: "for brave people" },
             { id: 18, name: "Sprite", price: 4, image: "http://cdn.shopify.com/s/files/1/0422/2681/1034/products/Sprite-12-Oz-Case-Of-24_600x600.png?v=1600995045", description: "Carbonated lemon water" },
             { id: 19, name: "Purple tinted Sprite", price: 150, image: "http://factmag-images.s3.amazonaws.com/wp-content/uploads/2012/05/LW280512.jpg", description: "Only served in a double cup. (must pay for both cups)" },
-            { id: 20, name: "Cherry Sprite", price: 3, image: "https://www.kroger.com/product/images/large/front/0004900007222", description: "Carbonated cherry cough syrup" }
+            { id: 20, name: "Cherry Sprite", price: 3, image: "https://www.kroger.com/product/images/large/front/0004900007222", description: "Carbonated cherry cough syrup" },
+            { id: 21, name: "No Drink", price: 0, image: "https://media.istockphoto.com/id/1281632732/vector/no-alcohol-sign-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=E6BPPS1KbAkRYmXOkVMdeXqbLL6tqpf1yce0gNZVwoU=", description: "No Drink Chosen"}
         ],
 
         desserts: [
@@ -71,7 +73,8 @@ const database = {
             { id: 17, name: "Orange Cream Fanta", price: 7, image: "https://funmoneymom.com/wp-content/uploads/2018/06/Orange-creamsicle-milkshakes-with-garnish-480x480.jpg", description: "Pillsbury cake batter powder mixed with our number 1 rated vanilla milkshake" },
             { id: 18, name: "Grape Cream Fanta", price: 7, image: "https://i.pinimg.com/originals/3c/ff/86/3cff8604d2741644c96d895be65007d8.jpg", description: "Grape Fanta blended with our store bought vanilla ice cream" },
             { id: 19, name: "Straight up Fanta & Ice Cream", price: 11, image: "https://www.eatingonadime.com/wp-content/uploads/2021/05/fanta-float-4.jpg", description: "A bottle of orange fanta with a side of ice cream of your choosing" },
-            { id: 20, name: "Extreme Chocolate", price: 4, image: "https://www.queensleeappetit.com/wp-content/uploads/2017/09/Ultimate-Chocolate-Lovers-Freakshake-recipe-queensleeappetit.com-3.jpg", description: "So so so much chocolate added to this....why so much chocolate???" }
+            { id: 20, name: "Extreme Chocolate", price: 4, image: "https://www.queensleeappetit.com/wp-content/uploads/2017/09/Ultimate-Chocolate-Lovers-Freakshake-recipe-queensleeappetit.com-3.jpg", description: "So so so much chocolate added to this....why so much chocolate???" },
+            { id: 21, name: "No Milkshake", price: 0, image: "https://images.squarespace-cdn.com/content/v1/56f338bad210b8404d6bda90/1577389333783-51FW6RMW5ST0INK2NYY6/JAN_milkshake+of+the+moment+images-03.png?format=500w", description: "No Milkshake Chosen"}
 
         ],
 
@@ -102,7 +105,11 @@ const database = {
             { id: 17, foodId: 17, locationId: 4, quantity: 500 },
             { id: 18, foodId: 18, locationId: 4, quantity: 700 },
             { id: 19, foodId: 19, locationId: 4, quantity: 800 },
-            { id: 20, foodId: 20, locationId: 4, quantity: 600 }
+            { id: 20, foodId: 20, locationId: 4, quantity: 600 },
+            { id: 21, foodId: 21, locationId: 1, quantity: 600 },
+            { id: 22, foodId: 21, locationId: 2, quantity: 600 },
+            { id: 23, foodId: 21, locationId: 3, quantity: 600 },
+            { id: 24, foodId: 21, locationId: 4, quantity: 600 },
         ],
 
         drinkLocations: [
@@ -125,7 +132,11 @@ const database = {
             { id: 17, drinkId: 17, locationId: 4, quantity: 500 },
             { id: 18, drinkId: 18, locationId: 4, quantity: 700 },
             { id: 19, drinkId: 19, locationId: 4, quantity: 800 },
-            { id: 20, drinkId: 20, locationId: 4, quantity: 600 }
+            { id: 20, drinkId: 20, locationId: 4, quantity: 600 },
+            { id: 21, drinkId: 21, locationId: 1, quantity: 600 },
+            { id: 22, drinkId: 21, locationId: 2, quantity: 600 },
+            { id: 23, drinkId: 21, locationId: 3, quantity: 600 },
+            { id: 24, drinkId: 21, locationId: 4, quantity: 600 },
         ],
         
         dessertLocations: [
@@ -148,7 +159,11 @@ const database = {
             { id: 17, dessertId: 17, locationId: 4, quantity: 500 },
             { id: 18, dessertId: 18, locationId: 4, quantity: 700 },
             { id: 19, dessertId: 19, locationId: 4, quantity: 800 },
-            { id: 20, dessertId: 20, locationId: 4, quantity: 600 }
+            { id: 20, dessertId: 20, locationId: 4, quantity: 600 },
+            { id: 21, dessertId: 21, locationId: 1, quantity: 600 },
+            { id: 22, dessertId: 21, locationId: 2, quantity: 600 },
+            { id: 23, dessertId: 21, locationId: 3, quantity: 600 },
+            { id: 24, dessertId: 21, locationId: 4, quantity: 600 }
         ],
 
         orders: [

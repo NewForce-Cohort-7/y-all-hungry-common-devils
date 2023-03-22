@@ -3,16 +3,25 @@ import {getFood,setFood, transientState,getFoodLocations} from "./database.js"
 const foodLocation = getFoodLocations ()
 const arrayOfood= getFood()
 export let foodmessage = ""
+
 document.addEventListener(
     "change",
+    
     (event) => {
-        if (event.target.id === "food") {
+        if (event.target.id === "food") 
             const selectedfood = arrayOfood.find(food => food.id === parseInt(event.target.value))
-            foodmessage = `${selectedfood.name}`;
+            foodmessage = `${selectedfood.name}`; `<img class="images" src="${selectedfood.image}" alt="${selectedfood.description}">$
             setFood(parseInt(event.target.value))
         }
     }
 )
+
+
+
+
+
+
+
 
 
 const setFoodMenu = () => {
@@ -30,8 +39,7 @@ const setFoodMenu = () => {
         localFoods += `<option value="${food.id}">${food.name}</option>`
       }
     })
-//  console.log(foodNum)
-//  console.log(localFoods)
+
     return localFoods
   }
 

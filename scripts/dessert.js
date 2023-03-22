@@ -2,7 +2,7 @@ import { getDesserts, setDessert, getDessertLocations, transientState} from "./d
 
 const desserts = getDesserts()
 const dessertLocations = getDessertLocations()
-let message = ""
+export let dessertMessage = ""
 // const filterDessertLocationsByDessert = (singleDessert) => {
     //     const inventories = []
     //     for (const inventory of dessertLocations) {
@@ -16,7 +16,7 @@ let message = ""
 document.addEventListener("change", (event) => {
     if (event.target.id === "desserts") { 
         const selectedDessert = desserts.find(dessert => dessert.id === parseInt(event.target.value))
-        message =  `${selectedDessert.name} Milkshake`
+        dessertMessage =  `<img class="images" src="${selectedDessert.image}" alt="${selectedDessert.description}">${selectedDessert.name} Milkshake`
         setDessert(parseInt(event.target.value))
     }
 })
@@ -54,7 +54,7 @@ export const dessert = () => {
     let html = ""
     
     html += '<select id="desserts">'
-    html += '<option value="0">Milkshake Flavors</option> <option>No Dessert</option>'
+    html += '<option value="0">Milkshake Flavors</option> <option value="21">No Dessert</option>'
     // see if the dessert.id is in bridge table for that location 
     
     //finds the correct locationId for the transientState
@@ -75,7 +75,7 @@ export const dessert = () => {
     html += correctDesserts
     // add an option that says none
     html += "</select>"
-    html +=     message
+   
     return html
 }
 

@@ -31,7 +31,7 @@ const addToDrankOrder = (selectedDrink) => { // this function builds the yourDri
 
 const setDrinkMenu = () => {
   const newState = transientState()
-  let localDranks = '<option>Drink Options</option> <option>No Drink</option>'
+  let localDranks = '<option>Drink Options</option> <option value="21">No Drink</option>'
   let drinkNum = []
   drankLocation.forEach(local => { 
     if (newState.locationId == local.locationId) {

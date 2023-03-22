@@ -72,10 +72,10 @@ export const dessert = () => {
         //-------  
     html += correctDesserts
     html += "</select>"    
-    const customOrder = transientState()
-    console.log(customOrder)
+    // const customOrder = transientState()
+    // console.log(customOrder)
 
-    console.log(html)
+    // console.log(html)
     return html
 }
 

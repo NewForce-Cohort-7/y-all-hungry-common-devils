@@ -71,7 +71,11 @@ export const dessert = () => {
 
         //-------  
     html += correctDesserts
-    html += "</select>"
+    html += "</select>"    
+    const customOrder = transientState()
+    console.log(customOrder)
+
+    console.log(html)
     return html
 }
 

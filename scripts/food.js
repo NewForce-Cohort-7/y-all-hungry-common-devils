@@ -2,11 +2,13 @@
 import {getFood,setFood, transientState,getFoodLocations} from "./database.js"
 const foodLocation = getFoodLocations ()
 const arrayOfood= getFood()
-
+export let foodmessage = ""
 document.addEventListener(
     "change",
     (event) => {
         if (event.target.id === "food") {
+            const selectedfood = arrayOfood.find(food => food.id === parseInt(event.target.value));
+            foodmessage = `${selectedfood.name}`;
             setFood(parseInt(event.target.value))
         }
     }
@@ -15,7 +17,7 @@ document.addEventListener(
 
 const setFoodMenu = () => {
     const newState = transientState()
-    let localFoods = '<option>Food Options</option>'
+    let localFoods = '<option>Food Options</option><option value="21"> No Food </option>'
     let foodNum = []
     foodLocation.forEach(local => { 
       if (newState.locationId == local.locationId) {

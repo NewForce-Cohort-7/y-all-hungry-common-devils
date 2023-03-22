@@ -1,6 +1,8 @@
-import {getDrinks, setDrink} from './database.js'
+import {getDrinks, setDrink, getDrinkLocations, transientState} from './database.js'
 
 const dranks = getDrinks() // initializing the dranks variable with the function call getDrinks()
+const drankLocation = getDrinkLocations()
+
 const yourDrinks = [] // an array that stores every drink selection from the user
 
 document.addEventListener(
@@ -27,17 +29,31 @@ const addToDrankOrder = (selectedDrink) => { // this function builds the yourDri
   drankOrder = drinksInOrder
 }
 
+const setDrinkMenu = () => {
+  const newState = transientState()
+  let localDranks = '<option>Drink Options</option> <option>No Drink</option>'
+  let drinkNum = []
+  drankLocation.forEach(local => { 
+    if (newState.locationId == local.locationId) {
+      drinkNum.push(local.id)
+    }
+  })
+  drinkNum.forEach(num => {
+      for (const drank of dranks) {
+        if(drank.id == num)
+      localDranks += `<option value="${drank.id}">${drank.name}</option>`
+    }
+  })
+  console.log(localDranks)
+  return localDranks
+}
+
 export const drinkOptions = () => {
   let html = '<select name="drinkNum">'
 
-  // Use .map() for converting objects to <li> elements
-  const drinkList = dranks.map(drink => {
-      return `<option value="${drink.id}">
-        ${drink.name}
-        </option>`
-  })
+  html += setDrinkMenu()
+ 
 
-  html += drinkList.join("")
   // console.log(html);
   html += '</select>'
 

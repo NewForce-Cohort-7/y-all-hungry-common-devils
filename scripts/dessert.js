@@ -2,7 +2,7 @@ import { getDesserts, setDessert, getDessertLocations, transientState} from "./d
 
 const desserts = getDesserts()
 const dessertLocations = getDessertLocations()
-
+let message = ""
 // const filterDessertLocationsByDessert = (singleDessert) => {
     //     const inventories = []
     //     for (const inventory of dessertLocations) {
@@ -15,11 +15,13 @@ const dessertLocations = getDessertLocations()
 
 document.addEventListener("change", (event) => {
     if (event.target.id === "desserts") { 
+        const selectedDessert = desserts.find(dessert => dessert.id === parseInt(event.target.value))
+        message =  `</img>${selectedDessert.name} Milkshake`
         setDessert(parseInt(event.target.value))
     }
 })
 // const inventories = filterDessertLocationsByDessert(dessert)
-
+{/* <img src="${selectedDessert.image}" alt="IMAGE NOT FOUND"></img> */}
 const filterDessertLocationsByLocation = () => {
     const  correctDessertLocations = []
     const customOrder = transientState()
@@ -73,6 +75,7 @@ export const dessert = () => {
     html += correctDesserts
     // add an option that says none
     html += "</select>"
+    html +=     message
     return html
 }
 

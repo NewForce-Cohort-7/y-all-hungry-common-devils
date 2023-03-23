@@ -2,7 +2,7 @@ import { food,foodmessage } from "./food.js"
 import { drinkOptions, drankOrder } from "./drink.js"
 import { dessert, dessertMessage } from "./dessert.js"
 import { orders } from "./orders.js"
-import { location } from "./location.js"
+import { location} from "./location.js"
 import { addCustomOrder } from "./database.js"
 
 
@@ -58,9 +58,8 @@ export const yallHungry = () => {
             <section class="belowHeaderCenter">
                 <article class="customOrders">
                     <h2> Orders </h2> 
-                    ${foodmessage}
-                    ${drankOrder}
-                    ${dessertMessage}
+                    <div class="viewSelection">${drankOrder}</div>
+                    <div class="viewSelection">${dessertMessage}</div>
                     ${orders()}
                 </article>
             </section>

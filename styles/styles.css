@@ -71,6 +71,16 @@ button {
   font-weight: 700;
 }
 
+.customOrders {
+  display: flex;
+  flex-direction: column;
+}
+
+.viewSelection {
+  display: flex;
+  align-items: center;
+}
+
 .belowHeaderRight {
   display: flex;
   font-weight: 700;
@@ -78,8 +88,8 @@ button {
 }
 
 .images {
-  max-width: 250px;
-  max-height: 250px;
+  max-width: min-content;
+  max-height: 65px;
   width: auto;
   height: auto;
 }

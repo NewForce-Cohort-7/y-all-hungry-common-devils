@@ -7,12 +7,11 @@ export let foodmessage = ""
 document.addEventListener("change",(event) => {
         if (event.target.id === "food") {
             const selectedFood = arrayOfood.find(food => food.id === parseInt(event.target.value))
-            foodmessage = `${selectedFood.name} <img class="images" src="${selectedFood.image}" alt="${selectedFood.description}">`
+            foodmessage = ` <img class="images" src="${selectedFood.image}" alt="${selectedFood.description}"><p class="images"><p class="selectedName">${selectedFood.name}<p>`;
             setFood(parseInt(event.target.value))
         }
     }
 )
-
 
 
 

@@ -58,6 +58,7 @@ export const yallHungry = () => {
             <section class="belowHeaderCenter">
                 <article class="customOrders">
                     <h2> Orders </h2> 
+                    <div class="viewSelection">${foodmessage}</div>
                     <div class="viewSelection">${drankOrder}</div>
                     <div class="viewSelection">${dessertMessage}</div>
                     ${orders()}

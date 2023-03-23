@@ -1,6 +1,5 @@
 const database = {
-    transientState: {
-    },
+    transientState: {},
 
         foods: [
             
@@ -50,7 +49,7 @@ const database = {
             { id: 18, name: "Sprite", price: 4, image: "http://cdn.shopify.com/s/files/1/0422/2681/1034/products/Sprite-12-Oz-Case-Of-24_600x600.png?v=1600995045", description: "Carbonated lemon water" },
             { id: 19, name: "Purple tinted Sprite", price: 150, image: "http://factmag-images.s3.amazonaws.com/wp-content/uploads/2012/05/LW280512.jpg", description: "Only served in a double cup. (must pay for both cups)" },
             { id: 20, name: "Cherry Sprite", price: 3, image: "https://www.kroger.com/product/images/large/front/0004900007222", description: "Carbonated cherry cough syrup" },
-            { id: 21, name: "No Drink", price: 0, image: "https://media.istockphoto.com/id/1281632732/vector/no-alcohol-sign-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=E6BPPS1KbAkRYmXOkVMdeXqbLL6tqpf1yce0gNZVwoU=", description: "No Drink Chosen"}
+            { id: 21, name: "No Drink", price: 0, image: "https://media.istockphoto.com/id/1281632732/vector/no-alcohol-sign-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=E6BPPS1KbAkRYmXOkVMdeXqbLL6tqpf1yce0gNZVwoU=", description: "No Drink Chosen"},
         ],
 
         desserts: [
@@ -76,7 +75,6 @@ const database = {
             { id: 19, name: "Straight up Fanta & Ice Cream", price: 11, image: "https://www.eatingonadime.com/wp-content/uploads/2021/05/fanta-float-4.jpg", description: "A bottle of orange fanta with a side of ice cream of your choosing" },
             { id: 20, name: "Extreme Chocolate", price: 4, image: "https://www.queensleeappetit.com/wp-content/uploads/2017/09/Ultimate-Chocolate-Lovers-Freakshake-recipe-queensleeappetit.com-3.jpg", description: "So so so much chocolate added to this....why so much chocolate???" },
             { id: 21, name: "No Milkshake", price: 0, image: "https://images.squarespace-cdn.com/content/v1/56f338bad210b8404d6bda90/1577389333783-51FW6RMW5ST0INK2NYY6/JAN_milkshake+of+the+moment+images-03.png?format=500w", description: "No Milkshake Chosen"}
-
         ],
 
         location: [
@@ -168,13 +166,13 @@ const database = {
         ],
 
         orders: [
-            // {
-                // id: 1,
-                // foodId: 1,
-                // drinkId: 1,
-                // dessertId: 1,
-                // locationId: 1
-            // }
+            {
+                id: 1,
+                foodId: 1,
+                drinkId: 1,
+                dessertId: 1,
+                locationId: 1
+            }
         ],
        
     
@@ -242,7 +240,7 @@ export const addCustomOrder = () => {
 
     // Add a new primary key to the object
     const lastIndex = database.orders.length - 1
-    newOrder.id = database.orders.length === 0 ? 1 : database.orders[lastIndex].id + 1
+    newOrder.id = database.orders[lastIndex].id + 1
 
     // Add a timestamp to the order
     newOrder.timestamp = Date.now()

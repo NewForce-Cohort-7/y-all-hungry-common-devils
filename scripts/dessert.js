@@ -16,7 +16,7 @@ export let dessertMessage = ""
 document.addEventListener("change", (event) => {
     if (event.target.id === "desserts") { 
         const selectedDessert = desserts.find(dessert => dessert.id === parseInt(event.target.value))
-        dessertMessage =  `<img class="images" src="${selectedDessert.image}" alt="${selectedDessert.description}">${selectedDessert.name} Milkshake`
+        dessertMessage =  `<img class="images" src="${selectedDessert.image}" alt="${selectedDessert.description}"><p class="selectedName">${selectedDessert.name} Milkshake<p>`
         setDessert(parseInt(event.target.value))
     }
 })

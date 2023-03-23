@@ -1,4 +1,4 @@
-import { getLocations, setLocation, } from "./database.js";
+import { getLocations, setLocation, transientState } from "./database.js";
 const locationArr = getLocations()
 
 let message = ""
@@ -19,11 +19,16 @@ export const location = () => {
     <option value="0">Store Location</option>
      `
     
-    const listItemsArray = locationArr.map(location => {     
-        
-        
+    const listItemsArray = locationArr.map(location => {   
+        const truck = transientState()  
+        if (truck.locationId == location.id) {
+
+            return `<option value="${location.id}" selected /> ${location.name}</option>`
+
+        } else {
+
         return `<option id="location" value="${location.id}">${location.name}</option>`  
-        
+        }
     })
     
     html += listItemsArray.join("")

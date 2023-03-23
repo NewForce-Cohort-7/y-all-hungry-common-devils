@@ -40,7 +40,7 @@ const setDrinkMenu = () => {
   })
   drinkNum.forEach(num => {
       for (const drank of dranks) {
-        if(drank.id == num)
+        if(drank.id == num) 
       localDranks += `<option value="${drank.id}">${drank.name}</option>`
     }
   })

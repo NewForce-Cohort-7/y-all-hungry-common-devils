@@ -37,12 +37,22 @@ const filterDessertLocationsByLocation = () => {
 const filterDessertLocationsByDessert = (desserts, theRightDessertLocations) => {
  let correctDesserts = ''
 //  use loop to get dessert.id  
- desserts.forEach(dessert => {
+
+  
+
+    const state = transientState()
+
+
+ theRightDessertLocations.forEach(bridge => {
      // //Use correct locations to find the correct desserts for that location
-     for (const theRightDessertLocation of theRightDessertLocations) {
-         if (dessert.id === theRightDessertLocation.dessertId) {
-             correctDesserts += `<option value="${dessert.id}">${dessert.name}</option>`
+     for (const dessert of desserts) {
+         if (bridge.dessertId === dessert.id) {
+            if(state.dessertId === dessert.id){
+             correctDesserts += `<option value="${dessert.id}" selected >${dessert.name}</option>`
             }
+            else {correctDesserts += `<option value="${dessert.id}">${dessert.name}</option>`
+            }
+        }
         }
     })
     //  Use correct desserts to return html string with dessert names in the selection options
@@ -54,7 +64,7 @@ export const dessert = () => {
     let html = ""
     
     html += '<select id="desserts">'
-    html += '<option value="0">Milkshake Flavors</option> <option value="21">No Dessert</option>'
+    html += '<option value="0">Milkshake Flavors</option> '
     // see if the dessert.id is in bridge table for that location 
     
     //finds the correct locationId for the transientState
@@ -72,9 +82,10 @@ export const dessert = () => {
 
 
         //-------  
+        // console.log(correctDesserts)
     html += correctDesserts
     // add an option that says none
-    html += "</select>"
+    html +=`</select>`
    
     return html
 }

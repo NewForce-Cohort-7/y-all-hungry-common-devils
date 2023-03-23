@@ -79,6 +79,11 @@ button {
 .viewSelection {
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
+}
+
+.selectedName {
+  margin-left: 20px;
 }
 
 .belowHeaderRight {
@@ -89,7 +94,7 @@ button {
 
 .images {
   max-width: min-content;
-  max-height: 65px;
+  max-height: 60px;
   width: auto;
   height: auto;
 }

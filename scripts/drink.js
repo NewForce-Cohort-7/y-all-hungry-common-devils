@@ -11,7 +11,7 @@ document.addEventListener(
       if (event.target.name === "drinkNum") {
         let drinkNum = parseInt(event.target.value)
         const selectedDrink = dranks.find(drink => drink.id === parseInt(event.target.value));
-        drankOrder = `<img src="${selectedDrink.image}" alt="${selectedDrink.description}" class="images"> <p>${selectedDrink.name}<p>`;
+        drankOrder = `<img src="${selectedDrink.image}" alt="${selectedDrink.description}" class="images"><p class="selectedName">${selectedDrink.name}<p>`;
         // for (const drink of dranks) { // iterate through database.drinks
         //   if (drink.id === drinkNum) { // check to see if the change event value is equal to database.drinks.id
         //     addToDrankOrder(drink.name) // add drink name to yourDrinks array, which updates the drankOrder

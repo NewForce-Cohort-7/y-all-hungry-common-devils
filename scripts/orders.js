@@ -5,8 +5,9 @@ const drinks = getDrinks()
 const desserts = getDesserts()
 const locations = getLocations()
 
-const buildOrderListItem = (order) => {
+let currentSubtotal = 0 // Initialize current subtotal to 0
 
+const buildOrderListItem = (order) => {
     const foundFood = food.find((food) => {
         return food.id === order.foodId
     })
@@ -23,30 +24,35 @@ const buildOrderListItem = (order) => {
         return location.id === order.locationId
     })
 
-let totalCost = (foundFood.price + foundDrink.price + foundDesserts.price) * 1.07
+    // Add the price of each selected item to the current subtotal
+    currentSubtotal = foundDrink.price + foundFood.price + foundDesserts.price
 
-const costString = totalCost.toLocaleString("en-US", {
-    style: "currency",
-    currency: "USD"
-})
+    const subtotalString = currentSubtotal.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD"
+    })
 
-return `<li>
-Order ${order.id} cost: ${costString}
+    const totalCost = currentSubtotal * (1 + 7/100)
 
+    const costString = totalCost.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD"
+    })
 
-
-</li>`
+return `Subtotal: ${subtotalString}
+Total: ${costString}
+`
 }
 
 export const orders = () => {
     const orders = getOrders()
 
-    let html = "<ul>"
+    let html = "<p>"
 
     const listItems = orders.map(buildOrderListItem)
 
     html+= listItems.join("")
-    html += "</ul>"
+    html += "</p>"
 
     return html
 

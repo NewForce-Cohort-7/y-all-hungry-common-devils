@@ -39,20 +39,20 @@ const buildOrderListItem = (order) => {
         currency: "USD"
     })
 
-return `Subtotal: ${subtotalString}
-Total: ${costString}
+return `<p>Subtotal: ${subtotalString}</p>
+<p> Total: ${costString}</p>
 `
 }
 
 export const orders = () => {
     const orders = getOrders()
 
-    let html = "<p>"
+    let html = "<div>"
 
     const listItems = orders.map(buildOrderListItem)
 
     html+= listItems.join("")
-    html += "</p>"
+    html += "</div>"
 
     return html
 

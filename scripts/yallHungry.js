@@ -58,13 +58,13 @@ export const yallHungry = () => {
                     <h2> Orders </h2> 
                     <div class="viewSelection">${drankOrder}</div>
                     <div class="viewSelection">${dessertMessage}</div>
-                    ${orders()}
                     
-                </article>
-            </section>
-
-            <section class="belowHeaderRight">
-                <article class="button">
+                    </article>
+                    </section>
+                    
+                    <section class="belowHeaderRight">
+                    <article class="button">
+                    ${orders()}
                     <button id="orderButton"> Place Order </button>
                 </article>
             </section>
